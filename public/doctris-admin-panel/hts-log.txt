@@ -1,0 +1,19 @@
+HTTrack3.49-2+htsswf+htsjava launched on Tue, 16 Jan 2024 22:45:28 at https://shreethemes.in/doctris/layouts/admin/index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://shreethemes.in/doctris/layouts/admin/index.html -O1 "F:\LARAVEL PROJECT\Admin Template\doctris-admin-panel" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+22:46:12	Error: 	"Not Found" (404) at link https://shreethemes.in/doctris/layouts/admin/profile.html (from https://shreethemes.in/doctris/layouts/admin/index.html)
+22:46:15	Error: 	"Not Found" (404) at link https://shreethemes.in/doctris/layouts/admin/pharmacy-product-detail.html (from https://shreethemes.in/doctris/layouts/admin/product-detail.html)
+22:46:15	Error: 	"Not Found" (404) at link https://shreethemes.in/doctris/layouts/admin/auth-re-password.html (from https://shreethemes.in/doctris/layouts/admin/ui-modals.html)
+22:46:15	Error: 	"Not Found" (404) at link https://shreethemes.in/doctris/layouts/admin/auth-signup.html (from https://shreethemes.in/doctris/layouts/admin/ui-modals.html)
+22:46:15	Error: 	"Not Found" (404) at link https://shreethemes.in/doctris/layouts/admin/assets/images/icon/Email.svg (from https://shreethemes.in/doctris/layouts/admin/ui-icons.html)
+22:46:15	Error: 	"Not Found" (404) at link https://shreethemes.in/doctris/layouts/admin/assets/images/icon/bitcoin.svg (from https://shreethemes.in/doctris/layouts/admin/ui-icons.html)
+22:46:15	Error: 	"Not Found" (404) at link https://shreethemes.in/doctris/layouts/admin/assets/images/icon/calendar.svg (from https://shreethemes.in/doctris/layouts/admin/ui-icons.html)
+22:46:15	Error: 	"Not Found" (404) at link https://shreethemes.in/doctris/layouts/admin/assets/images/icon/location.svg (from https://shreethemes.in/doctris/layouts/admin/ui-icons.html)
+
+HTTrack Website Copier/3.49-2 mirror complete in 47 seconds : 184 links scanned, 175 files written (12985381 bytes overall) [7707654 bytes received at 163992 bytes/sec], 6412926 bytes transferred using HTTP compression in 84 files, ratio 16%, 30.6 requests per connection
+(8 errors, 0 warnings, 0 messages)

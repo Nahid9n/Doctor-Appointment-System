@@ -1,0 +1,11 @@
+HTTrack3.49-2+htsswf+htsjava launched on Mon, 04 Dec 2023 00:19:57 at https://shreethemes.in/doctris/layouts/landing/index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F  -%F  -%l "en, *" https://shreethemes.in/doctris/layouts/landing/index.html -O1 "F:\LARAVEL PROJECT\Template\MEDICAL WEBSITE\Doctris Medical Website" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+
+HTTrack Website Copier/3.49-2 mirror complete in 1 minutes 6 seconds : 171 links scanned, 170 files written (13991374 bytes overall) [10196491 bytes received at 154492 bytes/sec], 4727782 bytes transferred using HTTP compression in 65 files, ratio 18%, 10.6 requests per connection
+(No errors, 0 warnings, 0 messages)
