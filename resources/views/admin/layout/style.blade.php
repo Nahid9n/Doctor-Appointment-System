@@ -11,3 +11,5 @@
 <link href="{{asset('/')}}admin/assets/libs/%40iconscout/unicons/css/line.css" type="text/css" rel="stylesheet" />
 <!-- Style Css-->
 <link href="{{asset('/')}}admin/assets/css/style.min.css" class="theme-opt" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
