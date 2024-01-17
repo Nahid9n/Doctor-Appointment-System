@@ -25,15 +25,17 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="appointment.html"><i class="uil uil-stethoscope me-2 d-inline-block"></i>Appointment</a></li>
+            <li><a href="#"><i class="uil uil-stethoscope me-2 d-inline-block"></i>Appointment</a></li>
 
             <li class="sidebar-dropdown">
                 <a href="javascript:void(0)"><i class="uil uil-user me-2 d-inline-block"></i>Doctors</a>
                 <div class="sidebar-submenu">
                     <ul>
-                        <li><a href="doctors.html">Doctors</a></li>
-                        <li><a href="add-doctor.html">Add Doctor</a></li>
-                        <li><a href="dr-profile.html">Profile</a></li>
+                        <li><a href="{{route('doctor-department.create')}}">Doctors Add Department</a></li>
+                        <li><a href="{{route('doctor-department.index')}}">Doctors Departments</a></li>
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="#">Add Doctor</a></li>
+                        <li><a href="#">Profile</a></li>
                     </ul>
                 </div>
             </li>
