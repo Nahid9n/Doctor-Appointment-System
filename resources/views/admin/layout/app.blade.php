@@ -91,6 +91,8 @@
 <!-- Offcanvas End -->
 @include('admin.layout.script')
 
+{!! Toastr::message() !!}
+
 </body>
 
 </html>

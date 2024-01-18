@@ -25,4 +25,28 @@ class DoctorDepartment extends Model
         self::$department->status = $request->status;
         self::$department->save();
     }
+    public static function updateDepartment($request,$id){
+        self::$department = DoctorDepartment::find($id);
+        self::$department->name = $request->name;
+        self::$bannerUrl = $request->file('banner') ? self::getBanner($request):'';
+        if ($request->file('banner')){
+            if (file_exists(self::$department->banner)){
+                unlink(self::$department->banner);
+            }
+            self::$department->banner = self::$bannerUrl;
+        }
+        self::$department->status = $request->status;
+        self::$department->save();
+    }
+    public static function deleteDepartment($id){
+        self::$department = DoctorDepartment::find($id);
+        if (file_exists(self::$department->banner)){
+            unlink(self::$department->banner);
+        }
+        self::$department->delete();
+    }
+    public function doctor(){
+        return $this->hasMany(Doctor::class);
+    }
+
 }

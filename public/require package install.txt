@@ -1,0 +1,1 @@
+﻿composer require brian2694/laravel-toastr
