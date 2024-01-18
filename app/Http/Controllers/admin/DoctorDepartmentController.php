@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\DoctorDepartment;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class DoctorDepartmentController extends Controller
 {
@@ -22,7 +23,9 @@ class DoctorDepartmentController extends Controller
      */
     public function create()
     {
-        return view('admin.doctor.department.add');
+        return view('admin.doctor.department.add',[
+            'departments'=>DoctorDepartment::latest()->take(8)->get(),
+        ]);
     }
 
     /**
@@ -30,7 +33,13 @@ class DoctorDepartmentController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+           'name'=>'required'
+        ],[
+            'name.required'=>'name is required'
+        ]);
         DoctorDepartment::newDepartment($request);
+        Toastr::success('message','new department create success.');
         return back()->with('message','new department create success.');
     }
 
@@ -47,7 +56,11 @@ class DoctorDepartmentController extends Controller
      */
     public function edit(DoctorDepartment $doctorDepartment)
     {
-        //
+        return view('admin.doctor.department.edit',
+            [
+                'department'=>$doctorDepartment,
+                'departments'=>DoctorDepartment::whereNotIn('id', [$doctorDepartment->id])->latest()->get(),
+            ]);
     }
 
     /**
@@ -55,7 +68,8 @@ class DoctorDepartmentController extends Controller
      */
     public function update(Request $request, DoctorDepartment $doctorDepartment)
     {
-        //
+        DoctorDepartment::updateDepartment($request,$doctorDepartment->id);
+        return redirect()->route('doctor-department.index')->with('message','update department info success.');
     }
 
     /**
@@ -63,6 +77,7 @@ class DoctorDepartmentController extends Controller
      */
     public function destroy(DoctorDepartment $doctorDepartment)
     {
-        //
+        DoctorDepartment::deleteDepartment($doctorDepartment->id);
+        return back()->with('message','Delete Department Success.');
     }
 }

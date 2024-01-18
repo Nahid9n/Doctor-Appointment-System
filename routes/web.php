@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\website\WebsiteController;
 use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\DoctorDepartmentController;
+use App\Http\Controllers\admin\DoctorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +20,4 @@ Route::get('/',[WebsiteController::class,'index'])->name('home');
 
 Route::get('/dashboard',[AdminDashboardController::class,'index'])->name('admin.dashboard');
 Route::resource('doctor-department',DoctorDepartmentController::class);
+Route::resource('doctors',DoctorController::class);

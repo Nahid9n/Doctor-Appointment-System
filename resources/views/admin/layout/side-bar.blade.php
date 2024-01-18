@@ -33,9 +33,8 @@
                     <ul>
                         <li><a href="{{route('doctor-department.create')}}">Doctors Add Department</a></li>
                         <li><a href="{{route('doctor-department.index')}}">Doctors Departments</a></li>
-                        <li><a href="#">Doctors</a></li>
-                        <li><a href="#">Add Doctor</a></li>
-                        <li><a href="#">Profile</a></li>
+                        <li><a href="{{route('doctors.index')}}">Doctors</a></li>
+                        <li><a href="{{route('doctors.create')}}">Add Doctor</a></li>
                     </ul>
                 </div>
             </li>

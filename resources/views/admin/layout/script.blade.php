@@ -75,3 +75,19 @@
 
 </script>
 <script src="https://kit.fontawesome.com/3ad9a7a10b.js" crossorigin="anonymous"></script>
+
+{{-- Success or fail message--}}
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.2/dist/alpine.min.js"></script>
+
+
+{{-- toastr js  --}}
+{{--<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>--}}
+
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+{!! Toastr::message() !!}
+
+<!-- INTERNAL Notifications js -->
+<script src="{{asset('/')}}admin/assets/notify/js/rainbow.js"></script>
+<script src="{{asset('/')}}admin/assets/notify/js/sample.js"></script>
+<script src="{{asset('/')}}admin/assets/notify/js/jquery.growl.js"></script>
+<script src="{{asset('/')}}admin/assets/notify/js/notifIt.js"></script>
