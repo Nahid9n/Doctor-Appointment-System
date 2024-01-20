@@ -14,7 +14,9 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.doctor.index',[
+            'doctors'=>Doctor::latest()->get(),
+        ]);
     }
 
     /**
@@ -33,7 +35,8 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        Doctor::newDoctor($request);
+        return back()->with('message','New Doctor Added Successfully.');
     }
 
     /**
@@ -49,7 +52,11 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $doctor)
     {
-        //
+        return view('admin.doctor.edit',[
+            'doctor'=>$doctor,
+            'departments'=>DoctorDepartment::where('status',1)->get(),
+            'doctors'=>Doctor::latest()->take(8)->get(),
+        ]);
     }
 
     /**
@@ -57,7 +64,8 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
-        //
+        Doctor::updateDoctor($request,$doctor->id);
+        return redirect()->route('doctors.index')->with('message','update doctor info successfully.');
     }
 
     /**
@@ -65,6 +73,7 @@ class DoctorController extends Controller
      */
     public function destroy(Doctor $doctor)
     {
-        //
+        Doctor::deleteDoctor($doctor->id);
+        return back()->with('message','Delete Doctor Info Successfully.');
     }
 }

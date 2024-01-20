@@ -43,9 +43,9 @@
                 <a href="javascript:void(0)"><i class="uil uil-wheelchair me-2 d-inline-block"></i>Patients</a>
                 <div class="sidebar-submenu">
                     <ul>
-                        <li><a href="patients.html">All Patients</a></li>
-                        <li><a href="add-patient.html">Add Patients</a></li>
-                        <li><a href="patient-profile.html">Profile</a></li>
+                        <li><a href="{{route('patient.index')}}">All Patients</a></li>
+                        <li><a href="{{route('patient.create')}}">Add Patients</a></li>
+{{--                        <li><a href="{{route('patient.show')}}">Profile</a></li>--}}
                     </ul>
                 </div>
             </li>

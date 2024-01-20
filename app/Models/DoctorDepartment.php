@@ -46,7 +46,10 @@ class DoctorDepartment extends Model
         self::$department->delete();
     }
     public function doctor(){
-        return $this->hasMany(Doctor::class);
+        return $this->belongsTo(Doctor::class);
+    }
+    public function patient(){
+        return $this->belongsTo(Patient::class);
     }
 
 }

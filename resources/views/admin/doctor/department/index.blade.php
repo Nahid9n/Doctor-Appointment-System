@@ -6,7 +6,7 @@
             <h5 class="mb-0">Doctors Department</h5>
             <nav aria-label="breadcrumb" class="d-inline-block mt-2">
                 <ul class="breadcrumb breadcrumb-muted bg-transparent rounded mb-0 p-0">
-                    <li class="breadcrumb-item"><a href="{{route('home')}}">Doctris</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Doctors Department</li>
                 </ul>
             </nav>
