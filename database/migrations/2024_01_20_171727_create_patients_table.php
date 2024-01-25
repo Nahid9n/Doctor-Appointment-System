@@ -21,6 +21,8 @@ return new class extends Migration
             $table->integer('mobile');
             $table->string('email')->unique()->nullable();
             $table->integer('department_id')->nullable();
+            $table->string('blood')->nullable();
+            $table->string('birth_day')->nullable();
             $table->date('date')->nullable();
             $table->time('time')->nullable();
             $table->tinyInteger('status')->default(1);

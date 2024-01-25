@@ -24,8 +24,13 @@ class Doctor extends Model
         self::$doctor->last_name = $request->last_name;
         self::$doctor->email = $request->email;
         self::$doctor->phone = $request->phone;
+        self::$doctor->date_of_birth = $request->date_of_birth;
+        self::$doctor->age = $request->age;
+        self::$doctor->education = $request->education;
+        self::$doctor->address = $request->address;
         self::$doctor->image = $request->file('image') ? self::getImage($request):'';
         self::$doctor->department_id = $request->department_id;
+        self::$doctor->blood_group = $request->blood_group;
         self::$doctor->gender = $request->gender;
         self::$doctor->experience = $request->experience;
         self::$doctor->facebook = $request->facebook;
@@ -49,7 +54,12 @@ class Doctor extends Model
         self::$doctor->last_name = $request->last_name;
         self::$doctor->email = $request->email;
         self::$doctor->phone = $request->phone;
+        self::$doctor->date_of_birth = $request->date_of_birth;
+        self::$doctor->age = $request->age;
+        self::$doctor->education = $request->education;
+        self::$doctor->address = $request->address;
         self::$doctor->department_id = $request->department_id;
+        self::$doctor->blood_group = $request->blood_group;
         self::$doctor->gender = $request->gender;
         self::$doctor->experience = $request->experience;
         self::$doctor->facebook = $request->facebook;

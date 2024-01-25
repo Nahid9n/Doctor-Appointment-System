@@ -60,6 +60,24 @@
                         <!--end col-->
                         <div class="col-md-6">
                             <div class="mb-3">
+                                <label class="form-label">Education</label>
+                                <input name="education" id="education" type="text" value="{{$doctor->education}}" class="form-control" placeholder="Education">
+                            </div>
+                        </div><!--end col-->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Date of Birth</label>
+                                <input name="date_of_birth" id="number" value="{{$doctor->date_of_birth}}" type="date" class="form-control">
+                            </div>
+                        </div><!--end col-->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Age</label>
+                                <input name="age" id="number" type="number" value="{{$doctor->age}}" class="form-control" placeholder="Age">
+                            </div>
+                        </div><!--end col-->
+                        <div class="col-md-6">
+                            <div class="mb-3">
                                 <label class="form-label">Departments</label>
                                 <select name="department_id" class="form-select mdi-select-search form-control">
                                     @forelse($departments as $department)
@@ -82,6 +100,30 @@
                             </div>
                         </div>
                         <!--end col-->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Blood Group</label>
+                                <select name="blood_group" class="form-select form-control">
+                                    <option {{$doctor->gender == 'A+' ? 'selected':''}} value="A+">A+</option>
+                                    <option {{$doctor->gender == 'A-' ? 'selected':''}} value="A-">A-</option>
+                                    <option {{$doctor->gender == 'AB+' ? 'selected':''}} value="AB+">AB+</option>
+                                    <option {{$doctor->gender == 'AB-' ? 'selected':''}} value="AB-">AB-</option>
+                                    <option {{$doctor->gender == 'B+' ? 'selected':''}} value="B+">B+</option>
+                                    <option {{$doctor->gender == 'B-' ? 'selected':''}} value="B-">B-</option>
+                                    <option {{$doctor->gender == 'O+' ? 'selected':''}} value="O+">O+</option>
+                                    <option {{$doctor->gender == 'O-' ? 'selected':''}} value="O-">O-</option>
+                                </select>
+                            </div>
+                        </div><!--end col-->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Address</label>
+                                <div class="input-group flex-nowrap">
+                                    <span class="input-group-text bg-light border border-end-0 text-dark" id="insta-id"><i data-feather="instagram" class="fea icon-sm"></i></span>
+                                    <textarea name="address" class="form-control" placeholder="Address" aria-label="Username" aria-describedby="insta-id">{{$doctor->address}}</textarea>
+                                </div>
+                            </div>
+                        </div><!--end col-->
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Experience</label>
@@ -164,7 +206,7 @@
                 <ul class="list-unstyled mb-0 p-4" data-simplebar style="height: 690px;">
                     @forelse($doctors as $doctor)
                         <li class="d-md-flex align-items-center text-center text-md-start mt-4">
-                            <img src="{{asset($doctor->banner)}}" class="avatar avatar-medium rounded-md shadow" alt="">
+                            <img src="{{asset($doctor->image)}}" class="avatar avatar-medium rounded-md shadow" alt="">
                             <div class="ms-md-3 mt-4 mt-sm-0">
                                 <a href="#" class="text-dark h6">{{$doctor->first_name.' '.$doctor->last_name}}</a>
                                 <p class="text-muted my-1">{{$doctor->department->name}}</p>

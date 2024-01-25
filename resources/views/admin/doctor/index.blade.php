@@ -24,17 +24,21 @@
                     <div class="card-body text-center">
                         <img src="{{asset($doctor->image)}}" class="" height="100" width="100" alt="">
                         <p class="fw-bold text-center speciality">{{$doctor->first_name.' '.$doctor->last_name}}</p>
+                        <div class="d-flex justify-content-center btn-sm">
+                            <a class="btn btn-primary btn-sm" href="{{route('doctors.edit',$doctor->id)}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-success btn-sm mx-1" href="{{route('doctors.show',$doctor->id)}}">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a class="" href="">
+                                <form action="{{route('doctors.destroy',$doctor->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm" onclick="return confirm('are you sure to delete ?')" type="submit"><i class="fa fa-trash"></i></button>
+                                </form>
+                            </a>
+                        </div>
                     </div>
-                    <div class=" justify-content-center btn-group ">
-                        <a class="btn btn-primary" href="{{route('doctors.edit',$doctor->id)}}"><i class="fa fa-edit"></i></a>
-                        <a class="btn btn-danger" href="">
-                            <form action="{{route('doctors.destroy',$doctor->id)}}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger" onclick="return confirm('are you sure to delete ?')" type="submit"><i class="fa fa-trash"></i></button>
-                            </form>
-                        </a>
-                    </div>
+
                 </div>
             </div><!--end col-->
         @endforeach

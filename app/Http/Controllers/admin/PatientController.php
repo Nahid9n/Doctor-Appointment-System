@@ -44,7 +44,10 @@ class PatientController extends Controller
      */
     public function show(Patient $patient)
     {
-        //
+        return view('admin.patient.show',[
+            'patient'=>$patient,
+            'patients'=>Patient::whereNotIn('id', [$patient->id])->latest()->take(8)->get(),
+        ]);
     }
 
     /**

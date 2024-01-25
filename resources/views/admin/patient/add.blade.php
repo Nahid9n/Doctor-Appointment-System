@@ -133,18 +133,22 @@
                         <li class="d-md-flex align-items-center text-center text-md-start mt-4">
                             <img src="{{asset($patient->image)}}" class="avatar avatar-medium rounded-md shadow" alt="">
                             <div class="ms-md-3 mt-4 mt-sm-0">
-                                <a href="#" class="text-dark h6">{{$patient->name}}</a>
-                                <p class="text-muted my-1">{{$patient->department->name ?? ''}}</p>
+                                <a href="#" class="text-dark h6">{{ $patient->name }}</a>
+                                <p class="text-muted my-1">{{ $patient->department->name ?? ''}}</p>
                             </div>
                             <div class="ms-md-3 d-flex mt-4 mt-sm-0">
-                                <a href="{{route('patient.edit',$patient->id)}}" class="btn btn-primary btn-sm mx-1"><i class="fa fa-edit"></i></a>
-                                <a href="#" class="">
-                                    <form action="{{route('patient.destroy',$patient->id)}}" method="post">
+                                <a class="btn btn-primary btn-sm mx-1" href="{{route('patient.edit',$patient->id)}}">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a class="btn btn-success btn-sm mx-1" href="{{route('patient.show',$patient->id)}}">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a class="mx-1" href="">
+                                    <form action="{{route('patient.destroy',$patient->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-sm" onclick="return confirm('are you sure to delete ?')" type="submit"><i class="fa fa-trash"></i></button>
                                     </form>
-
                                 </a>
                             </div>
                         </li>
