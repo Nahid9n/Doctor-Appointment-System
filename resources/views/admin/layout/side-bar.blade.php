@@ -12,21 +12,7 @@
 
         <ul class="sidebar-menu">
             <li><a href="index.html"><i class="uil uil-dashboard me-2 d-inline-block"></i>Dashboard</a></li>
-
-            <li class="sidebar-dropdown">
-                <a href="javascript:void(0)"><i class="uil uil-browser me-2"></i>Layouts <span class="badge bg-danger rounded-pill ms-2">New</span></a>
-                <div class="sidebar-submenu">
-                    <ul>
-                        <li><a href="index-dark.html">Dark Dashboard</a></li>
-                        <li><a href="index-rtl.html">RTL Dashboard</a></li>
-                        <li><a href="index-rtl-dark.html">Dark RTL Dashboard</a></li>
-                        <li><a href="index-sidebar-dark.html">Dark Sidebar</a></li>
-                        <li><a href="index-sidebar-colored.html">Colored Sidebar</a></li>
-                    </ul>
-                </div>
-            </li>
             <li><a href="#"><i class="uil uil-stethoscope me-2 d-inline-block"></i>Appointment</a></li>
-
             <li class="sidebar-dropdown">
                 <a href="javascript:void(0)"><i class="uil uil-user me-2 d-inline-block"></i>Doctors</a>
                 <div class="sidebar-submenu">

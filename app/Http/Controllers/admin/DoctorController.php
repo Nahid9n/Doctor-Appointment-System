@@ -44,7 +44,10 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        //
+        return view('admin.doctor.show',[
+            'doctor'=>$doctor,
+            'doctors'=>Doctor::whereNotIn('id', [$doctor->id])->latest()->take(8)->get(),
+        ]);
     }
 
     /**
@@ -55,7 +58,7 @@ class DoctorController extends Controller
         return view('admin.doctor.edit',[
             'doctor'=>$doctor,
             'departments'=>DoctorDepartment::where('status',1)->get(),
-            'doctors'=>Doctor::latest()->take(8)->get(),
+            'doctors'=>Doctor::whereNotIn('id', [$doctor->id])->latest()->take(8)->get(),
         ]);
     }
 

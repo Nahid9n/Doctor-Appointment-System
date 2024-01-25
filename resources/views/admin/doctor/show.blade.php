@@ -1,13 +1,13 @@
 @extends('admin.layout.app')
-@section('title','Patient Profile')
+@section('title','Doctor Profile')
 @section('body')
     <div class="d-md-flex justify-content-between">
-        <h5 class="mb-0">Patient Profile</h5>
+        <h5 class="mb-0">doctor Profile</h5>
 
         <nav aria-label="breadcrumb" class="d-inline-block mt-4 mt-sm-0">
             <ul class="breadcrumb bg-transparent rounded mb-0 p-0">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Doctris</a></li>
-                <li class="breadcrumb-item"><a href="{{route('patient.index')}}">Patients</a></li>
+                <li class="breadcrumb-item"><a href="{{route('doctors.index')}}">doctors</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Profile</li>
             </ul>
         </nav>
@@ -21,9 +21,9 @@
                 </div>
 
                 <div class="text-center avatar-profile margin-nagative mt-n5 position-relative pb-4 border-bottom">
-                    <img src="{{asset($patient->image)}}" class="rounded-circle shadow-md avatar avatar-md-md" alt="">
-                    <h5 class="mt-3 mb-1">{{$patient->name}}</h5>
-                    <p class="text-muted mb-0">{{$patient->age}} Years old</p>
+                    <img src="{{asset($doctor->image)}}" class="rounded-circle shadow-md avatar avatar-md-md" alt="">
+                    <h5 class="mt-3 mb-1">{{$doctor->name}}</h5>
+                    <p class="text-muted mb-0">{{$doctor->age}} Years old</p>
                 </div>
 
                 <div class="list-unstyled p-4">
@@ -39,36 +39,36 @@
                     <div class="d-flex align-items-center mt-2">
                         <i class="uil uil-user align-text-bottom text-primary h5 mb-0 me-2"></i>
                         <h6 class="mb-0">Gender</h6>
-                        <p class="text-muted mb-0 ms-2">{{$patient->gender}}</p>
+                        <p class="text-muted mb-0 ms-2">{{$doctor->gender}}</p>
                     </div>
 
                     <div class="d-flex align-items-center mt-2">
                         <i class="uil uil-envelope align-text-bottom text-primary h5 mb-0 me-2"></i>
                         <h6 class="mb-0">Department</h6>
-                        <p class="text-muted mb-0 ms-2">{{$patient->department->name}}</p>
+                        <p class="text-muted mb-0 ms-2">{{$doctor->department->name}}</p>
                     </div>
 
                     <div class="d-flex align-items-center mt-2">
                         <i class="uil uil-book-open align-text-bottom text-primary h5 mb-0 me-2"></i>
                         <h6 class="mb-0">Phone No.</h6>
-                        <p class="text-muted mb-0 ms-2">{{$patient->mobile}}</p>
+                        <p class="text-muted mb-0 ms-2">{{$doctor->phone}}</p>
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <i class="uil uil-book-open align-text-bottom text-primary h5 mb-0 me-2"></i>
                         <h6 class="mb-0">Email.</h6>
-                        <p class="text-muted mb-0 ms-2">{{$patient->email}}</p>
+                        <p class="text-muted mb-0 ms-2">{{$doctor->email}}</p>
                     </div>
 
                     <div class="d-flex align-items-center mt-2">
                         <i class="uil uil-italic align-text-bottom text-primary h5 mb-0 me-2"></i>
                         <h6 class="mb-0">Address</h6>
-                        <p class="text-muted mb-0 ms-2">{{$patient->address}}</p>
+                        <p class="text-muted mb-0 ms-2">{{$doctor->address}}</p>
                     </div>
 
                     <div class="d-flex align-items-center mt-2">
                         <i class="uil uil-medical-drip align-text-bottom text-primary h5 mb-0 me-2"></i>
                         <h6 class="mb-0">Blood Group</h6>
-                        <p class="text-muted mb-0 ms-2">{{$patient->blood}}</p>
+                        <p class="text-muted mb-0 ms-2">{{$doctor->blood_group}}</p>
                     </div>
                 </div>
             </div>
@@ -242,22 +242,22 @@
                 </div>
 
                 <ul class="list-unstyled mb-0 p-4" data-simplebar style="height: 664px;">
-                    @forelse($patients as $patient)
+                    @forelse($doctors as $doctor)
                         <li class="d-md-flex align-items-center text-center text-md-start mt-4">
-                            <img src="{{asset($patient->image)}}" class="avatar avatar-medium rounded-md shadow" alt="">
+                            <img src="{{asset($doctor->image)}}" class="avatar avatar-medium rounded-md shadow" alt="">
                             <div class="ms-md-3 mt-4 mt-sm-0">
-                                <a href="#" class="text-dark h6">{{$patient->name}}</a>
-                                <p class="text-muted my-1">{{$patient->department->name ?? ''}}</p>
+                                <a href="#" class="text-dark h6">{{$doctor->name}}</a>
+                                <p class="text-muted my-1">{{$doctor->department->name ?? ''}}</p>
                             </div>
                             <div class="ms-md-3 d-flex mt-4 mt-sm-0">
-                                <a class="btn btn-primary btn-sm mx-1" href="{{route('patient.edit',$patient->id)}}">
+                                <a class="btn btn-primary btn-sm mx-1" href="{{route('doctors.edit',$doctor->id)}}">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <a class="btn btn-success btn-sm mx-1" href="{{route('patient.show',$patient->id)}}">
+                                <a class="btn btn-success btn-sm mx-1" href="{{route('doctors.show',$doctor->id)}}">
                                     <i class="fa fa-eye"></i>
                                 </a>
                                 <a class="mx-1" href="">
-                                    <form action="{{route('patient.destroy',$patient->id)}}" method="POST">
+                                    <form action="{{route('doctors.destroy',$doctor->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-sm" onclick="return confirm('are you sure to delete ?')" type="submit"><i class="fa fa-trash"></i></button>
@@ -268,12 +268,12 @@
                     @empty
                         <li class="d-md-flex align-items-center text-center text-md-start mt-4">
                             <div class="ms-md-3 mt-4 mt-sm-0">
-                                <p href="#" class="text-dark h6">No Patient Found</p>
+                                <p href="#" class="text-dark h6">No doctor Found</p>
                             </div>
                         </li>
                     @endforelse
                     <li class="mt-4">
-                        <a href="{{route('patient.index')}}" class="btn btn-primary">All Patients</a>
+                        <a href="{{route('doctors.index')}}" class="btn btn-primary">All doctors</a>
                     </li>
                 </ul>
             </div>
@@ -331,7 +331,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header border-bottom p-3">
-                    <h5 class="modal-title" id="exampleModalLabel">Patient Invoice</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">doctor Invoice</h5>
                     <button type="button" class="btn btn-icon btn-close" data-bs-dismiss="modal" id="close-modal"><i class="uil uil-times fs-4 text-dark"></i></button>
                 </div>
                 <div class="modal-body p-3 pt-4">
@@ -361,7 +361,7 @@
                                     <small class="mb-0">&nbsp;&nbsp;<a href="#" class="text-dark">www.doctris.com</a></small>
                                 </li>
                                 <li class="d-flex mt-2">
-                                    <small class="mb-0 text-muted">Patient Name : </small>
+                                    <small class="mb-0 text-muted">doctor Name : </small>
                                     <small class="mb-0">&nbsp;&nbsp;Mary Skeens</small>
                                 </li>
                             </ul>
